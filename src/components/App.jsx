@@ -1,9 +1,9 @@
 import { nanoid } from 'nanoid';
 import { useState, useEffect } from 'react';
-import { ContactForm } from '../ContactForm/ContactForm';
-import ContactList from '../ContactList/ContactList';
-import Filter from '../Filter/Filter';
-import { AppContainer, ContactsContainer, Title } from './App.styled';
+import { ContactForm } from './ContactForm/ContactForm';
+import ContactList from './ContactList/ContactList';
+import Filter from './Filter/Filter';
+import { AppContainer, ContactsContainer, Title } from './App/App.styled';
 
 export function App() {
   const [contacts, setContacts] = useState(
