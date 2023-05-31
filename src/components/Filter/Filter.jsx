@@ -1,21 +1,35 @@
 import PropTypes from 'prop-types';
-import { FilterContainer, Label, Input } from './Filter.styled';
+import {
+  StyledFormik,
+  StyledForm,
+  StyledLabel,
+  StyledField,
+} from './Filter.styled';
 
-export default function Filter({ value, onFilter }) {
+const FilterForm = ({ label, onChange }) => {
+  const initialValues = {
+    filter: '',
+  };
+
   return (
-    <FilterContainer>
-      <Label htmlFor="filter">Find contacts by name</Label>
-      <Input
-        type="text"
-        name="filter"
-        placeholder="Enter name of contact"
-        value={value}
-        onChange={onFilter}
-      />
-    </FilterContainer>
+    <StyledFormik initialValues={initialValues}>
+      <StyledForm>
+        <StyledLabel htmlFor="filter">{label}</StyledLabel>
+        <StyledField
+          type="text"
+          id="filter"
+          name="filter"
+          onChange={onChange}
+          value={onChange.filter}
+        />
+      </StyledForm>
+    </StyledFormik>
   );
-}
-Filter.propTypes = {
-  value: PropTypes.string.isRequired,
-  onFilter: PropTypes.func.isRequired,
+};
+
+export default FilterForm;
+
+FilterForm.propTypes = {
+  label: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };

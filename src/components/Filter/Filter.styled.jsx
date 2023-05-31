@@ -1,33 +1,31 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
+import { Formik, Form, Field } from 'formik';
 
-export const FilterContainer = styled.div`
+const StyledFormik = styled(Formik)`
+  display: flex;
+`;
+
+const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  ${'' /* margin: 0 auto; */}
-  ${
-    '' /* border: 1px solid #eeeeee;
-  max-width: 280px;
-  background-color: #f8fbfe; */
-  }
+  margin: 0 auto;
 `;
 
-export const Label = styled.label`
+const StyledLabel = styled.label`
   display: block;
-
-  font-size: 16px;
-  line-height: calc(30 / 16);
+  margin-right: auto;
 `;
 
-export const Input = styled.input`
-  padding: 12px 12px 12px 12px;
-
-  border: 1px solid rgba(33, 33, 33, 0.2);
+const StyledField = styled(Field)`
+  width: 100%;
+  padding: 10px;
   border-radius: 4px;
-  outline: none;
+  border: 1.5px solid #ccc;
 
   &:focus {
-    border-color: #1D513E;
+    outline: none;
+    border-color: #afbd4b;
   }
 `;
+
+export { StyledFormik, StyledForm, StyledLabel, StyledField };
