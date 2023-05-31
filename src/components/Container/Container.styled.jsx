@@ -1,36 +1,18 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
-export const Container = styled.div`
+const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 14px;
+  flex-direction: column;
 `;
 
-export const Text = styled.p`
-  margin-bottom: 4px;
-
-  font-size: 18px;
+const MainTitle = styled.h1`
+  margin-right: 20px;
 `;
 
-export const DeleteButton = styled.button`
-  border-radius: 4px;
-  border: 0.5px solid transparent;
-  display: block;
-  min-width: 60px;
-  margin: 0 auto;
-
-  color: #1D513E;
-  background-color: #f4fcf2;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  padding: 10px 42px;
-
-  &:hover {
-    background-color: #A3DFC6;
-  }
+const SecondTitle = styled.h2`
+  margin-right: 90px;
 `;
+
+export { Container, MainTitle, SecondTitle };
